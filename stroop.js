@@ -1,5 +1,6 @@
 // Important variables
 var testedAll;
+var EMPTY_PARAGRAPH = "<p></p>"
 
 // Get HTML Objects
 inputDiv = document.getElementById("inputDiv");
@@ -46,5 +47,34 @@ function clearStorage(){
 }
 
 function display(currStep){
-  
+  if (currStep[1] == 1) {
+    inputDiv.innerHTML = displayInput(currStep[0]);
+    instructionsDiv.innerHTML = EMPTY_PARAGRAPH;
+    outputDiv.innerHTML = EMPTY_PARAGRAPH;
+  }
+  else if (currStep[1] == 2) {
+    inputDiv.innerHTML = EMPTY_PARAGRAPH;
+    instructionsDiv.innerHTML = displayInstructions(currStep[0]);
+    outputDiv.innerHTML = EMPTY_PARAGRAPH;
+  }
+  else if (currStep[1] == 3) {
+    inputDiv.innerHTML = EMPTY_PARAGRAPH;
+    instructionsDiv.innerHTML = EMPTY_PARAGRAPH;
+    outputDiv.innerHTML = displayOutput(currStep[0]);
+  }
+  else {
+    console.log("I-D-K, WHAT TO DISPLAY");
+  }
+}
+
+function displayInput(round){
+  return "<p> Input for Round " + round + " of experiment. </p>";
+}
+
+function displayInstructions(round){
+  return "<p> Instructions for Round " + round + " of experiment. </p>";
+}
+
+function displayOutput(round){
+  return "<p> Output for Round " + round + " of experiment. </p>";
 }
