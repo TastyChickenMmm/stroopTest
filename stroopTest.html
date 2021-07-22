@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Stroop Experiment</title>
+    <meta charset="utf-8"></meta>
+    <script defer src="stroop.js"></script>
+    <style>
+    #myDiv, button {
+      font-size: 150%;
+    }
+    input {
+      font-size: 125%;
+    }
+    #textOutput {
+      border: 1px solid black;
+      width: 819px;
+    }
+    </style>
+  </head>
+  <body>
+
+    <div id="inputDiv" style = "color: blue;">
+      <p>RED</p>
+    </div>
+
+    <div id="instructionDiv" style = "color: blue;">
+    </div>
+
+    <div id="outputDiv" style = "color: blue;">
+    </div>
+
+    <button onclick='next()'>Next</button>
+
+    <br /> <br />
+
+    <button onclick='clearStorage()''>Clear Storage</button>
+
+  </body>
+</html>
