@@ -1,11 +1,10 @@
 // Important variables
 var date;
 var EMPTY_PARAGRAPH = "<p></p>"
+var NUM_QUESTIONS = 3;
 
 // Get HTML Objects
-inputDiv = document.getElementById("inputDiv");
-instructionsDiv = document.getElementById("instructionsDiv");
-outputDiv = document.getElementById("outputDiv");
+myDiv = document.getElementById("myDiv");
 
 // Set up first question
 var currStep = localStorage.getItem("currStep");
@@ -86,26 +85,28 @@ function clearStorage(){
 
 function display(currStep){
   if (currStep[1] == 1) {
-    inputDiv.innerHTML = displayInput(currStep[0]);
-    instructionsDiv.innerHTML = EMPTY_PARAGRAPH;
-    outputDiv.innerHTML = EMPTY_PARAGRAPH;
-    setTimeout(next, 1000)
+    if (currStep[0] <= NUM_QUESTIONS) {
+      myDiv.innerHTML = displayInput(currStep[0]);
+      setTimeout(next, 1000)
+    } else {
+      displayFinal();
+    }
   }
   else if (currStep[1] == 2) {
-    inputDiv.innerHTML = EMPTY_PARAGRAPH;
-    instructionsDiv.innerHTML = displayInstructions(currStep[0]);
-    outputDiv.innerHTML = EMPTY_PARAGRAPH;
+    myDiv.innerHTML = displayInstructions(currStep[0]);
     setTimeout(next, 1000)
   }
   else if (currStep[1] == 3) {
-    inputDiv.innerHTML = EMPTY_PARAGRAPH;
-    instructionsDiv.innerHTML = EMPTY_PARAGRAPH;
-    outputDiv.innerHTML = displayOutput(currStep[0]);
+    myDiv.innerHTML = displayOutput(currStep[0]);
     date = Date.now();
   }
   else {
     console.log("I-D-K, WHAT TO DISPLAY");
   }
+}
+
+function displayFinal(){
+  myDiv.innerHTML = "<p>Thanks for participating!</p>";
 }
 
 function displayInput(round){
