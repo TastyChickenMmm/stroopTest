@@ -7,7 +7,6 @@ inputDiv = document.getElementById("inputDiv");
 instructionsDiv = document.getElementById("instructionsDiv");
 outputDiv = document.getElementById("outputDiv");
 
-
 // Set up first question
 var currStep = localStorage.getItem("currStep");
 currStep = JSON.parse(currStep);
@@ -15,6 +14,18 @@ if (currStep == null) {
   currStep = [1,1];
 }
 console.log("currStep: " + currStep);
+
+// Create Event Listeners
+// Listens for answer choices. (1, 2, 3, or 4.)
+document.addEventListener("keydown", function(event) {
+  var key = parseInt(event.keyCode) - 48;
+    if (key >= 1 && key <= 4) {
+      if (currStep[1]==3) {
+        console.log("ANSWERED " + key);
+        next();
+      }
+    }
+});
 
 // Once called, goes to the next step of the experiment
 function next(){
@@ -76,5 +87,6 @@ function displayInstructions(round){
 }
 
 function displayOutput(round){
-  return "<p> Output for Round " + round + " of experiment. </p>";
+
+  return "<p> Output for Round " + round + " of experiment. </p> <br /> <p>Out 1 Out 2 Out 3 Out 4</p>";
 }
