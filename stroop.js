@@ -11,7 +11,7 @@ outputDiv = document.getElementById("outputDiv");
 var currStep = localStorage.getItem("currStep");
 currStep = JSON.parse(currStep);
 if (currStep == null) {
-  currStep = [1,1];
+  currStep = [1,0];
 }
 console.log("currStep: " + currStep);
 
