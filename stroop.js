@@ -1,5 +1,5 @@
 // Important variables
-var testedAll;
+var date;
 var EMPTY_PARAGRAPH = "<p></p>"
 
 // Get HTML Objects
@@ -15,13 +15,38 @@ if (currStep == null) {
 }
 console.log("currStep: " + currStep);
 
+// Set up list of answers & times
+var answers = localStorage.getItem(answers);
+if (typeof(answers) == "undefined" || answers == null) {
+  answers = [];
+} else {
+  answers = JSON.parse(answers);
+}
+
+var times = localStorage.getItem(times);
+if (typeof(times) == "undefined" || times == null) {
+  times = [];
+} else {
+  times = JSON.parse(times);
+}
+
 // Create Event Listeners
 // Listens for answer choices. (1, 2, 3, or 4.)
 document.addEventListener("keydown", function(event) {
   var key = parseInt(event.keyCode) - 48;
     if (key >= 1 && key <= 4) {
       if (currStep[1]==3) {
+        answers.push(key);
         console.log("ANSWERED " + key);
+        console.log("Answers: " + answers);
+        localStorage.setItem("answers", JSON.stringify(answers));
+
+        var currDate = Date.now();
+        var time = currDate - date;
+        times.push(time);
+        console.log("Time taken (ms): " + time);
+        console.log("Times: " + times);
+        localStorage.setItem("times", JSON.stringify(times));
         next();
       }
     }
@@ -54,6 +79,8 @@ function clearStorage(){
   }
 
   localStorage.removeItem("currStep");
+  localStorage.removeItem("answers");
+  localStorage.removeItem("times");
   console.log("STORAGE CLEARED");
 }
 
@@ -62,18 +89,19 @@ function display(currStep){
     inputDiv.innerHTML = displayInput(currStep[0]);
     instructionsDiv.innerHTML = EMPTY_PARAGRAPH;
     outputDiv.innerHTML = EMPTY_PARAGRAPH;
-    setTimeout(next, 2000)
+    setTimeout(next, 1000)
   }
   else if (currStep[1] == 2) {
     inputDiv.innerHTML = EMPTY_PARAGRAPH;
     instructionsDiv.innerHTML = displayInstructions(currStep[0]);
     outputDiv.innerHTML = EMPTY_PARAGRAPH;
-    setTimeout(next, 2000)
+    setTimeout(next, 1000)
   }
   else if (currStep[1] == 3) {
     inputDiv.innerHTML = EMPTY_PARAGRAPH;
     instructionsDiv.innerHTML = EMPTY_PARAGRAPH;
     outputDiv.innerHTML = displayOutput(currStep[0]);
+    date = Date.now();
   }
   else {
     console.log("I-D-K, WHAT TO DISPLAY");
