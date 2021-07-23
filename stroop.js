@@ -62,11 +62,13 @@ function display(currStep){
     inputDiv.innerHTML = displayInput(currStep[0]);
     instructionsDiv.innerHTML = EMPTY_PARAGRAPH;
     outputDiv.innerHTML = EMPTY_PARAGRAPH;
+    setTimeout(next, 2000)
   }
   else if (currStep[1] == 2) {
     inputDiv.innerHTML = EMPTY_PARAGRAPH;
     instructionsDiv.innerHTML = displayInstructions(currStep[0]);
     outputDiv.innerHTML = EMPTY_PARAGRAPH;
+    setTimeout(next, 2000)
   }
   else if (currStep[1] == 3) {
     inputDiv.innerHTML = EMPTY_PARAGRAPH;
