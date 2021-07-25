@@ -86,18 +86,18 @@ function clearStorage(){
 function display(currStep){
   if (currStep[1] == 1) {
     if (currStep[0] <= NUM_QUESTIONS) {
-      myDiv.innerHTML = displayInput(currStep[0]);
+      displayInputs(currStep[0]);
       setTimeout(next, 1000)
     } else {
       displayFinal();
     }
   }
   else if (currStep[1] == 2) {
-    myDiv.innerHTML = displayInstructions(currStep[0]);
+    displayInstructions(currStep[0]);
     setTimeout(next, 1000)
   }
   else if (currStep[1] == 3) {
-    myDiv.innerHTML = displayOutput(currStep[0]);
+    displayOutputs(currStep[0]);
     date = Date.now();
   }
   else {
@@ -109,15 +109,61 @@ function displayFinal(){
   myDiv.innerHTML = "<p>Thanks for participating!</p>";
 }
 
-function displayInput(round){
-  return "<p> Input for Round " + round + " of experiment. </p>";
+
+// ---------------- ALL THE QUESTIONS ARE DOWN HERE ---------------- \\
+
+function displayInputs(round){
+  showInput("word" + round, "red");
+  // myDiv.innerHTML = "<p> Input for Round " + round + " of experiment. </p>";
 }
 
 function displayInstructions(round){
-  return "<p> Instructions for Round " + round + " of experiment. </p>";
+  showInstruction(true);
+  // myDiv.innerHTML = "<p> Instructions for Round " + round + " of experiment. </p>";
 }
 
-function displayOutput(round){
+function displayOutputs(round){
+  showOutput("word1", "red", "word2", "yellow", "word3", "green", "word4", "blue");
+  // myDiv.innerHTML = "<p> Output for Round " + round + " of experiment. </p> <br /> <p>Out 1 Out 2 Out 3 Out 4</p>";
+}
 
-  return "<p> Output for Round " + round + " of experiment. </p> <br /> <p>Out 1 Out 2 Out 3 Out 4</p>";
+// ---------------- ALL THE QUESTIONS ARE UP THERE ---------------- \\
+
+
+function showInput(word, color){
+  if (color == "yellow") {
+    color = "#ffdd00";
+  }
+  myDiv.innerHTML = "<p>" + word.toUpperCase() + "</p>"
+  myDiv.style = "text-size:100px; color:" + color + ";"
+}
+
+function showInstruction(isWord){
+  if (isWord) {
+    myDiv.innerHTML = "<p> Select the matching WORD.</p>"
+  } else {
+    myDiv.innerHTML = "<p> Select the matching COLOR.</p>"
+  }
+  myDiv.style = "text-size:100px; color: black;"
+}
+
+function showOutput(word1, color1, word2, color2, word3, color3, word4, color4){
+  if (color1 == "yellow") {
+    color1 = "#ffdd00";
+  }
+  if (color2 == "yellow") {
+    color2 = "#ffdd00";
+  }
+  if (color3 == "yellow") {
+    color3 = "#ffdd00";
+  }
+  if (color4 == "yellow") {
+    color4 = "#ffdd00";
+  }
+  myDiv.innerHTML = "<p>"
+  + "<span style=color:" + color1 + ">" + word1 + "</span>       "
+  + "<span style=color:" + color2 + ">" + word2 + "</span><br />"
+  + "<span style=color:" + color3 + ">" + word3 + "</span>       "
+  + "<span style=color:" + color4 + ">" + word4 + "</span>"
+  + "</p>";
 }
