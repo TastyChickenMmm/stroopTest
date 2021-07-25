@@ -1,7 +1,9 @@
 // Important variables
 var date;
 var EMPTY_PARAGRAPH = "<p></p>"
-var NUM_QUESTIONS = 3;
+var NUM_QUESTIONS = 28;
+var INPUT_WAIT_TIME = 3000;
+var INSTRUCTIONS_WAIT_TIME = 700;
 
 // Get HTML Objects
 myDiv = document.getElementById("myDiv");
@@ -87,14 +89,14 @@ function display(currStep){
   if (currStep[1] == 1) {
     if (currStep[0] <= NUM_QUESTIONS) {
       displayInputs(currStep[0]);
-      setTimeout(next, 1000)
+      setTimeout(next, INPUT_WAIT_TIME)
     } else {
       displayFinal();
     }
   }
   else if (currStep[1] == 2) {
     displayInstructions(currStep[0]);
-    setTimeout(next, 1000)
+    setTimeout(next, INSTRUCTIONS_WAIT_TIME)
   }
   else if (currStep[1] == 3) {
     displayOutputs(currStep[0]);
@@ -113,18 +115,267 @@ function displayFinal(){
 // ---------------- ALL THE QUESTIONS ARE DOWN HERE ---------------- \\
 
 function displayInputs(round){
-  showInput("word" + round, "red");
-  // myDiv.innerHTML = "<p> Input for Round " + round + " of experiment. </p>";
+  switch (round) {
+    case 1:
+      showInput("yellow", "red");
+      break;
+    case 2:
+      showInput("red", "black");
+      break;
+    case 3:
+      showInput("purple", "orange");
+      break;
+    case 4:
+      showInput("black", "green");
+      break;
+    case 5:
+      showInput("orange", "blue");
+      break;
+    case 6:
+      showInput("purple", "orange");
+      break;
+    case 7:
+      showInput("red", "yellow");
+      break;
+    case 8:
+      showInput("blue", "red");
+      break;
+    case 9:
+      showInput("blue", "yellow");
+      break;
+    case 10:
+      showInput("green", "black");
+      break;
+    case 11:
+      showInput("yellow", "green");
+      break;
+    case 12:
+      showInput("yellow", "blue");
+      break;
+    case 13:
+      showInput("black", "red");
+      break;
+    case 14:
+      showInput("blue", "black");
+      break;
+    case 15:
+      showInput("purple", "green");
+      break;
+    case 16:
+      showInput("black", "blue");
+      break;
+    case 17:
+      showInput("green", "orange");
+      break;
+    case 18:
+      showInput("red", "black");
+      break;
+    case 19:
+      showInput("orange", "red");
+      break;
+    case 20:
+      showInput("black", "blue");
+      break;
+    case 21:
+      showInput("green", "yellow");
+      break;
+    case 22:
+      showInput("purple", "black");
+      break;
+    case 23:
+      showInput("red", "green");
+      break;
+    case 24:
+      showInput("blue", "red");
+      break;
+    case 25:
+      showInput("red", "blue");
+      break;
+    case 26:
+      showInput("yellow", "red");
+      break;
+    case 27:
+      showInput("purple", "orange");
+      break;
+    case 28:
+      showInput("black", "green");
+  }
 }
 
 function displayInstructions(round){
-  showInstruction(true);
-  // myDiv.innerHTML = "<p> Instructions for Round " + round + " of experiment. </p>";
+  switch (round) {
+    case 1:
+      showInstruction(false);
+      break;
+    case 2:
+      showInstruction(true);
+      break;
+    case 3:
+      showInstruction(false);
+      break;
+    case 4:
+      showInstruction(true);
+      break;
+    case 5:
+      showInstruction(true);
+      break;
+    case 6:
+      showInstruction(true);
+      break;
+    case 7:
+      showInstruction(false);
+      break;
+    case 8:
+      showInstruction(false);
+      break;
+    case 9:
+      showInstruction(true);
+      break;
+    case 10:
+      showInstruction(false);
+      break;
+    case 11:
+      showInstruction(true);
+      break;
+    case 12:
+      showInstruction(false);
+      break;
+    case 13:
+      showInstruction(true);
+      break;
+    case 14:
+      showInstruction(false);
+      break;
+    case 15:
+      showInstruction(false);
+      break;
+    case 16:
+      showInstruction(true);
+      break;
+    case 17:
+      showInstruction(false);
+      break;
+    case 18:
+      showInstruction(true);
+      break;
+    case 19:
+      showInstruction(true);
+      break;
+    case 20:
+      showInstruction(true);
+      break;
+    case 21:
+      showInstruction(true);
+      break;
+    case 22:
+      showInstruction(false);
+      break;
+    case 23:
+      showInstruction(false);
+      break;
+    case 24:
+      showInstruction(false);
+      break;
+    case 25:
+      showInstruction(false);
+      break;
+    case 26:
+      showInstruction(true);
+      break;
+    case 27:
+      showInstruction(false);
+      break;
+    case 28:
+      showInstruction(true);
+  }
 }
 
 function displayOutputs(round){
-  showOutput("word1", "red", "word2", "yellow", "word3", "green", "word4", "blue");
-  // myDiv.innerHTML = "<p> Output for Round " + round + " of experiment. </p> <br /> <p>Out 1 Out 2 Out 3 Out 4</p>";
+  switch (round) {
+    case 1:
+      showOutput("red", "black", "black", "yellow", "yellow", "blue", "purple", "red");
+      break;
+    case 2:
+      showOutput("blue", "orange", "yellow", "red", "green", "black", "red", "yellow");
+      break;
+    case 3:
+      showOutput("green", "orange", "yellow", "purple", "orange", "red", "purple", "black");
+      break;
+    case 4:
+      showOutput("blue", "green", "black", "red", "red", "black", "purple", "blue");
+      break;
+    case 5:
+      showOutput("black", "yellow", "blue", "red", "purple", "blue", "orange", "purple");
+      break;
+    case 6:
+      showOutput("black", "blue", "purple", "green", "orange", "purple", "red", "orange");
+      break;
+    case 7:
+      showOutput("red", "green", "orange", "purple", "green", "black", "black", "yellow");
+      break;
+    case 8:
+      showOutput("green", "orange", "blue", "green", "orange", "red", "yellow", "blue");
+      break;
+    case 9:
+      showOutput("blue", "orange", "orange", "yellow", "yellow", "green", "purple", "red");
+      break;
+    case 10:
+      showOutput("green", "orange", "red", "black", "black", "blue", "yellow", "green");
+      break;
+    case 11:
+      showOutput("red", "black", "yellow", "orange", "orange", "yellow", "purple", "green");
+      break;
+    case 12:
+      showOutput("purple", "green", "yellow", "black", "green", "blue", "orange", "red");
+      break;
+    case 13:
+      showOutput("black", "blue", "yellow", "green", "blue", "black", "green", "red");
+      break;
+    case 14:
+      showOutput("green", "black", "yellow", "red", "blue", "orange", "red", "purple");
+      break;
+    case 15:
+      showOutput("purple", "black", "green", "purple", "orange", "green", "black", "yellow");
+      break;
+    case 16:
+      showOutput("purple", "yellow", "red", "purple", "black", "green", "orange", "blue");
+      break;
+    case 17:
+      showOutput("purple", "orange", "black", "yellow", "orange", "red", "green", "blue");
+      break;
+    case 18:
+      showOutput("orange", "purple", "green", "black", "black", "orange", "red", "green");
+      break;
+    case 19:
+      showOutput("green", "red", "red", "black", "orange", "green", "yellow", "orange");
+      break;
+    case 20:
+      showOutput("blue", "green", "red", "black", "yellow", "blue", "black", "yellow");
+      break;
+    case 21:
+      showOutput("red", "yellow", "purple", "green", "green", "black", "orange", "blue");
+      break;
+    case 22:
+      showOutput("green", "black", "black", "green", "purple", "orange", "orange", "yellow");
+      break;
+    case 23:
+      showOutput("red", "blue", "purple", "orange", "blue", "green", "green", "red");
+      break;
+    case 24:
+      showOutput("orange", "blue", "green", "red", "blue", "yellow", "black", "orange");
+      break;
+    case 25:
+      showOutput("green", "blue", "purple", "red", "blue", "orange", "red", "black");
+      break;
+    case 26:
+      showOutput("green", "blue", "blue", "red", "purple", "yellow", "yellow", "orange");
+      break;
+    case 27:
+      showOutput("purple", "red", "yellow", "orange", "red", "purple", "green", "black");
+      break;
+    case 28:
+      showOutput("green", "yellow", "orange", "purple", "red", "green", "black", "red");
+  }
 }
 
 // ---------------- ALL THE QUESTIONS ARE UP THERE ---------------- \\
@@ -133,6 +384,8 @@ function displayOutputs(round){
 function showInput(word, color){
   if (color == "yellow") {
     color = "#ffdd00";
+  } else if (color == "purple") {
+    color = "#9403fc";
   }
   myDiv.innerHTML = "<p>" + word.toUpperCase() + "</p>"
   myDiv.style = "text-size:100px; color:" + color + ";"
@@ -150,20 +403,28 @@ function showInstruction(isWord){
 function showOutput(word1, color1, word2, color2, word3, color3, word4, color4){
   if (color1 == "yellow") {
     color1 = "#ffdd00";
+  } else if (color1 == "purple") {
+    color1 = "#9403fc";
   }
   if (color2 == "yellow") {
     color2 = "#ffdd00";
+  } else if (color2 == "purple") {
+    color2 = "#9403fc";
   }
   if (color3 == "yellow") {
     color3 = "#ffdd00";
+  } else if (color3 == "purple") {
+    color3 = "#9403fc";
   }
   if (color4 == "yellow") {
     color4 = "#ffdd00";
+  } else if (color4 == "purple") {
+    color4 = "#9403fc";
   }
   myDiv.innerHTML = "<p>"
-  + "<span style=color:" + color1 + ">" + word1 + "</span>       "
-  + "<span style=color:" + color2 + ">" + word2 + "</span><br />"
-  + "<span style=color:" + color3 + ">" + word3 + "</span>       "
-  + "<span style=color:" + color4 + ">" + word4 + "</span>"
+  + "<span style=color:" + color1 + ">" + word1.toUpperCase() + "</span>       "
+  + "<span style=color:" + color2 + ">" + word2.toUpperCase() + "</span><br />"
+  + "<span style=color:" + color3 + ">" + word3.toUpperCase() + "</span>       "
+  + "<span style=color:" + color4 + ">" + word4.toUpperCase() + "</span>"
   + "</p>";
 }
