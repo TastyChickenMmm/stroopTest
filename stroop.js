@@ -1,7 +1,7 @@
 // Important variables
 var date;
 var EMPTY_PARAGRAPH = "<p></p>"
-var NUM_QUESTIONS = 1;
+var NUM_QUESTIONS = 3;
 var INPUT_WAIT_TIME = 3000;
 var INSTRUCTIONS_WAIT_TIME = 1000;
 
