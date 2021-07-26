@@ -107,15 +107,6 @@ function display(currStep){
   }
 }
 
-function displayFinal(){
-  myDiv.innerHTML = "<p style='font-size:50px;'>Thanks for participating! Take some cats.</p>"
-  +"<img src = 'images/kitty1.jpeg' alt='Kitten Image' style = 'width:800px'/>"
-  +"<img src = 'images/kitty2.jpeg' alt='Kitten Image' style = 'width:800px'/>"
-  +"<img src = 'images/kitty3.jpeg' alt='Kitten Image' style = 'width:800px'/>"
-  +"<img src = 'images/kitty4.jpeg' alt='Kitten Image' style = 'width:800px'/>"
-  +"<img src = 'images/kitty5.jpeg' alt='Kitten Image' style = 'width:800px'/>"
-}
-
 
 // ---------------- ALL THE QUESTIONS ARE DOWN HERE ---------------- \\
 
@@ -399,11 +390,11 @@ function showInput(word, color){
 
 function showInstruction(isWord){
   if (isWord) {
-    myDiv.innerHTML = "<p> Select the choice with the matching WORD.</p>"
+    myDiv.innerHTML = "<p style='color: black;'> Select the choice with the matching WORD.</p>";
   } else {
-    myDiv.innerHTML = "<p> Select the choice with the matching COLOR.</p>"
+    myDiv.innerHTML = "<p style='color: black;'> Select the choice with the matching COLOR.</p>";
   }
-  myDiv.style = "font-size:100px; color: black;"
+  myDiv.style = "font-size:100px;";
 }
 
 function showOutput(word1, color1, word2, color2, word3, color3, word4, color4){
@@ -428,31 +419,40 @@ function showOutput(word1, color1, word2, color2, word3, color3, word4, color4){
     color4 = "#9403fc";
   }
 
-  myDiv.innerHTML = "<div class='container'>"
+  myDiv.innerHTML += "<div class='container'>"
     + "<div class='row'>"
       + "<div class='col-sm'>"
-        + "<p style=color:" + color1 + ">" + word1.toUpperCase() + "</p>"
+        + "<p style='font-size:100px; color:" + color1 + "'>" + word1.toUpperCase() + " <span style='color:gray;'>1</span></p>"
       + "</div>"
       + "<div class='col-sm'>"
-        + "<p style=color:" + color2 + ">" + word2.toUpperCase() + "</p>"
+        + "<p style='font-size:100px; color:" + color2 + "'>" + word2.toUpperCase() + " <span style='color:gray;'>2</span></p>"
       + "</div>"
     + "</div>"
     + "<div class='row'>"
       + "<div class='col-sm'>"
-        + "<p style=color:" + color3 + ">" + word3.toUpperCase() + "</p>"
+        + "<p style='font-size:100px; color:" + color3 + "'>" + word3.toUpperCase() + " <span style='color:gray;'>3</span></p>"
       + "</div>"
       + "<div class='col-sm'>"
-        + "<p style=color:" + color4 + ">" + word4.toUpperCase() + "</p>"
+        + "<p style='font-size:100px; color:" + color4 + "'>" + word4.toUpperCase() + " <span style='color:gray;'>4</span></p>"
       + "</div>"
     + "</div>"
   + "</div>"
 
+  myDiv.style = "font-size: 30px;";
+}
 
-  // myDiv.innerHTML = "<p>"
-  // + "<span style=color:" + color1 + ">" + word1.toUpperCase() + "</span>       "
-  // + "<span style=color:" + color2 + ">" + word2.toUpperCase() + "</span><br />"
-  // + "<span style=color:" + color3 + ">" + word3.toUpperCase() + "</span>       "
-  // + "<span style=color:" + color4 + ">" + word4.toUpperCase() + "</span>"
-  // + "</p>";
-  myDiv.style = "font-size:100px;"
+
+function displayFinal(){
+  myDiv.innerHTML = "<p>Thanks for participating! Here are your results, which you should copy-paste and email to Dr. Chen because I'm too lazy to build a database:</p>"
+  + "<p> Answers: " + answers + "</p>"
+  + "<p> Times: " + times + "</p>"
+  + "<p>Take some cats too. You've completed the game and may now close the page.</p>"
+  +"<img src = 'images/kitty1.jpeg' alt='Kitten Image' style = 'width:800px'/>"
+  +"<img src = 'images/kitty2.jpeg' alt='Kitten Image' style = 'width:800px'/>"
+  +"<img src = 'images/kitty3.jpeg' alt='Kitten Image' style = 'width:800px'/>"
+  +"<img src = 'images/kitty4.jpeg' alt='Kitten Image' style = 'width:800px'/>"
+  +"<img src = 'images/kitty5.jpeg' alt='Kitten Image' style = 'width:800px'/>"
+
+  myDiv.style = "font-size: 20px;";
+
 }
