@@ -394,9 +394,9 @@ function showInput(word, color){
 
 function showInstruction(isWord){
   if (isWord) {
-    myDiv.innerHTML = "<p> Select the matching WORD.</p>"
+    myDiv.innerHTML = "<p> Select the choice with the matching WORD.</p>"
   } else {
-    myDiv.innerHTML = "<p> Select the matching COLOR.</p>"
+    myDiv.innerHTML = "<p> Select the choice with the matching COLOR.</p>"
   }
   myDiv.style = "font-size:100px; color: black;"
 }
