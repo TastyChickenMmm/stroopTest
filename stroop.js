@@ -108,7 +108,12 @@ function display(currStep){
 }
 
 function displayFinal(){
-  myDiv.innerHTML = "<p>Thanks for participating!</p>";
+  myDiv.innerHTML = "<p style='font-size:50px;'>Thanks for participating! Take some cats.</p>"
+  +"<img src = 'images/kitty1.jpeg' alt='Kitten Image' style = 'width:800px'/>"
+  +"<img src = 'images/kitty2.jpeg' alt='Kitten Image' style = 'width:800px'/>"
+  +"<img src = 'images/kitty3.jpeg' alt='Kitten Image' style = 'width:800px'/>"
+  +"<img src = 'images/kitty4.jpeg' alt='Kitten Image' style = 'width:800px'/>"
+  +"<img src = 'images/kitty5.jpeg' alt='Kitten Image' style = 'width:800px'/>"
 }
 
 
@@ -394,9 +399,9 @@ function showInput(word, color){
 
 function showInstruction(isWord){
   if (isWord) {
-    myDiv.innerHTML = "<p> Select the matching WORD.</p>"
+    myDiv.innerHTML = "<p> Select the choice with the matching WORD.</p>"
   } else {
-    myDiv.innerHTML = "<p> Select the matching COLOR.</p>"
+    myDiv.innerHTML = "<p> Select the choice with the matching COLOR.</p>"
   }
   myDiv.style = "font-size:100px; color: black;"
 }

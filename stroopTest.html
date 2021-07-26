@@ -19,14 +19,57 @@
         <h3 class = "text-center"><u>Instructions:</u></h3>
         <div class="container">
           <p>This experiment will consist of 28 rounds, where each round contains 3 steps.</p>
+
           <p>In the first step, you will be shown a colored word, where the font
             name does not match the name of the color.</p>
-          <p>In the second step, you will be instructed to match either the word or the color for the third step.</p>
+          <p>e.g.</p>
+          <p style="color:blue; font-size: 100px" class = "text-center">RED</p>
+
+          <p>In the second step, you will be instructed to match <b>either the word or the color</b> for the third step.</p>
+          <p>e.g.</p>
+          <p style="font-size: 80px" class = "text-center">Select the choice with the matching COLOR.</p>
+
           <p>In the third step, you will be presented with 4 answer choices. Use your keyboard keys (1, 2, 3, or 4) to
-          select the choice which matches the word given in Step 1.</p>
-        </div>
+          select the choice which matches either the font name or the color given in Step 1.</p>
+          <p>e.g.</p>
+          <div class="container" style="font-size:80px">
+            <div class="row">
+              <div class="col-sm">
+                <p style="color:green;">RED <span style="color:black;">1</span></p>
+              </div>
+              <div class="col-sm">
+                <p style="color:red;">BLUE <span style="color:black;">2</span></p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm">
+                <p style="color:blue;">YELLOW <span style="color:black;">3</span></p>
+              </div>
+              <div class="col-sm">
+                <p style="color:orange;">PURPLE <span style="color:black;">4</span></p>
+              </div>
+            </div>
+          </div>
+          <p>In the above example, the correct answer would be <span style="color:blue;">YELLOW</span>, because <span style="color:blue;">YELLOW</span> and <span style="color:blue;">RED</span> are both colored blue,
+            so you should press 3 on your keyboard.</p>
+
+          <p style="font-size:30px;">Oh, and also: Speed matters!</p>
+          <p>Good luck, and press the button below to begin. The experiment should take around
+          2-3 minutes.</p>
+          <br />
 
         <button onclick='next()' class = "btn btn-primary btn-lg btn-block">Click to Start</button>
+
+        <br />
+        <hr />
+        <h1 class="display-5 p-5 text-center">FAQs</h1>
+        <p><b>Q:</b> Is there dark mode?</p>
+        <p><b>A:</b> No.</p>
+
+        <br />
+        <hr />
+        <br />
+        <p class="text-center" style="font-size:70%;">By Daniel Xu and Dr. Trevor Chad</p>
       </div>
     </div>
 
