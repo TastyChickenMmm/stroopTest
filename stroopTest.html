@@ -4,28 +4,36 @@
     <title>Stroop Experiment</title>
     <meta charset="utf-8"></meta>
     <script defer src="stroop.js"></script>
-    <style>
-    #myDiv, button {
-      font-size: 150%;
-    }
-    input {
-      font-size: 125%;
-    }
-    #textOutput {
-      border: 1px solid black;
-      width: 819px;
-    }
-    </style>
+    <!-- Importing Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </head>
   <body>
 
-    <div id="myDiv" style = "color: blue;">
-      <button onclick='next()'>Start</button>
+    <div class="container-fluid">
+      <div id="myDiv">
+        <h1 class="display-1 p-5 text-center">A THING</h1>
+
+        <h3 class = "text-center"><u>Instructions:</u></h3>
+        <div class="container">
+          <p>This experiment will consist of 28 rounds, where each round contains 3 steps.</p>
+          <p>In the first step, you will be shown a colored word, where the font
+            name does not match the name of the color.</p>
+          <p>In the second step, you will be instructed to match either the word or the color for the third step.</p>
+          <p>In the third step, you will be presented with 4 answer choices. Use your keyboard keys (1, 2, 3, or 4) to
+          select the choice which matches the word given in Step 1.</p>
+        </div>
+
+        <button onclick='next()' class = "btn btn-primary btn-lg btn-block">Click to Start</button>
+      </div>
     </div>
+
 
     <br /> <br />
 
-    <button onclick='clearStorage()''>Clear Storage</button>
+    <button onclick='clearStorage()'>Clear Storage</button>
 
   </body>
 </html>

@@ -1,9 +1,9 @@
 // Important variables
 var date;
 var EMPTY_PARAGRAPH = "<p></p>"
-var NUM_QUESTIONS = 28;
+var NUM_QUESTIONS = 1;
 var INPUT_WAIT_TIME = 3000;
-var INSTRUCTIONS_WAIT_TIME = 700;
+var INSTRUCTIONS_WAIT_TIME = 1000;
 
 // Get HTML Objects
 myDiv = document.getElementById("myDiv");
@@ -387,8 +387,9 @@ function showInput(word, color){
   } else if (color == "purple") {
     color = "#9403fc";
   }
+
   myDiv.innerHTML = "<p>" + word.toUpperCase() + "</p>"
-  myDiv.style = "text-size:100px; color:" + color + ";"
+  myDiv.style = "font-size:300px; color:" + color + ";"
 }
 
 function showInstruction(isWord){
@@ -397,7 +398,7 @@ function showInstruction(isWord){
   } else {
     myDiv.innerHTML = "<p> Select the matching COLOR.</p>"
   }
-  myDiv.style = "text-size:100px; color: black;"
+  myDiv.style = "font-size:100px; color: black;"
 }
 
 function showOutput(word1, color1, word2, color2, word3, color3, word4, color4){
@@ -421,10 +422,32 @@ function showOutput(word1, color1, word2, color2, word3, color3, word4, color4){
   } else if (color4 == "purple") {
     color4 = "#9403fc";
   }
-  myDiv.innerHTML = "<p>"
-  + "<span style=color:" + color1 + ">" + word1.toUpperCase() + "</span>       "
-  + "<span style=color:" + color2 + ">" + word2.toUpperCase() + "</span><br />"
-  + "<span style=color:" + color3 + ">" + word3.toUpperCase() + "</span>       "
-  + "<span style=color:" + color4 + ">" + word4.toUpperCase() + "</span>"
-  + "</p>";
+
+  myDiv.innerHTML = "<div class='container'>"
+    + "<div class='row'>"
+      + "<div class='col-sm'>"
+        + "<p style=color:" + color1 + ">" + word1.toUpperCase() + "</p>"
+      + "</div>"
+      + "<div class='col-sm'>"
+        + "<p style=color:" + color2 + ">" + word2.toUpperCase() + "</p>"
+      + "</div>"
+    + "</div>"
+    + "<div class='row'>"
+      + "<div class='col-sm'>"
+        + "<p style=color:" + color3 + ">" + word3.toUpperCase() + "</p>"
+      + "</div>"
+      + "<div class='col-sm'>"
+        + "<p style=color:" + color4 + ">" + word4.toUpperCase() + "</p>"
+      + "</div>"
+    + "</div>"
+  + "</div>"
+
+
+  // myDiv.innerHTML = "<p>"
+  // + "<span style=color:" + color1 + ">" + word1.toUpperCase() + "</span>       "
+  // + "<span style=color:" + color2 + ">" + word2.toUpperCase() + "</span><br />"
+  // + "<span style=color:" + color3 + ">" + word3.toUpperCase() + "</span>       "
+  // + "<span style=color:" + color4 + ">" + word4.toUpperCase() + "</span>"
+  // + "</p>";
+  myDiv.style = "font-size:100px;"
 }
