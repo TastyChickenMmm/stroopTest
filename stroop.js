@@ -1,7 +1,7 @@
 // Important variables
 var date;
 var EMPTY_PARAGRAPH = "<p></p>"
-var NUM_QUESTIONS = 3;
+var NUM_QUESTIONS = 28;
 var INPUT_WAIT_TIME = 3000;
 var INSTRUCTIONS_WAIT_TIME = 1000;
 
@@ -73,11 +73,11 @@ function next(){
 
 function clearStorage(){
   // Uh, clears the storage
-  if (!confirm("This action will permanently erase all of the data you have \
-  entered into this page. Are you sure you want to continue?")) {
-    // Gives a pop-up asking for confirmation
-    return;
-  }
+  // if (!confirm("This action will permanently erase all of the data you have \
+  // entered into this page. Are you sure you want to continue?")) {
+  //   // Gives a pop-up asking for confirmation
+  //   return;
+  // }
 
   localStorage.removeItem("currStep");
   localStorage.removeItem("answers");
@@ -454,5 +454,5 @@ function displayFinal(){
   +"<img src = 'images/kitty5.jpeg' alt='Kitten Image' style = 'width:800px'/>"
 
   myDiv.style = "font-size: 20px;";
-
+  clearStorage();
 }
